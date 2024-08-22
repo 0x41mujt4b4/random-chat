@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import ChatBar from "./ChatBar";
+// import ChatBar from "./ChatBar";
 import ChatBody from "./ChatBody";
 // import ChatFooter from './ChatFooter';
 const ChatPage = ({ socket }) => {
@@ -36,18 +36,29 @@ const ChatPage = ({ socket }) => {
 
   if (loading) {
     return (
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-        <div>
-          <p>Waiting for another user to connect...</p>
-          {/* You can replace the following with a spinner if you'd like */}
-          <div className="spinner" />
+      <div className="flex h-svh items-center justify-center">
+        <div id="wifi-loader">
+          <svg viewBox="0 0 86 86" className="circle-outer">
+            <circle r="40" cy="43" cx="43" className="back"></circle>
+            <circle r="40" cy="43" cx="43" className="front"></circle>
+            <circle r="40" cy="43" cx="43" className="new"></circle>
+          </svg>
+          <svg viewBox="0 0 60 60" className="circle-middle">
+            <circle r="27" cy="30" cx="30" className="back"></circle>
+            <circle r="27" cy="30" cx="30" className="front"></circle>
+          </svg>
+          <svg viewBox="0 0 34 34" className="circle-inner">
+            <circle r="14" cy="17" cx="17" className="back"></circle>
+            <circle r="14" cy="17" cx="17" className="front"></circle>
+          </svg>
+          <div data-text="Looking for someone..." className="text"></div>
         </div>
       </div>
     );
   }
   return (
     <div className="flex flex-col h-svh">
-      <ChatBar socket={socket} />
+      {/* <ChatBar socket={socket} /> */}
       <ChatBody
         messages={messages}
         setMessages={setMessages}

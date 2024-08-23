@@ -9,11 +9,13 @@ const socket = socketIO.connect('http://192.168.1.4:4000', {transports: ['websoc
 function App() {
   return (
       <BrowserRouter>
+      <div className="flex flex-col h-svh">
         <Navbar socket={socket}/>
         <Routes>
           <Route path="/" element={<Home socket={socket} />}></Route>
           <Route path="/chat" element={<ChatPage socket={socket} />}></Route>
         </Routes>
+      </div>
       </BrowserRouter>
   );
 }

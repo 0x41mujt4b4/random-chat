@@ -57,7 +57,7 @@ const ChatPage = ({ socket }) => {
     );
   }
   return (
-    <div className="flex flex-col h-svh">
+    <div className="flex flex-col flex-grow">
       {/* <ChatBar socket={socket} /> */}
       <ChatBody
         messages={messages}

@@ -41,7 +41,7 @@ const ChatBody = ({ messages, setMessages, socket, partnerTypingStatus, setPartn
   };
 
   return (
-    <div className="flex-1">
+    <div className="h-full max-h-[calc(100svh-10svh)]">
       <MainContainer>
         <ChatContainer>
           <MessageList typingIndicator={partnerTypingStatus && <TypingIndicator content="Stranger is typing" />}>

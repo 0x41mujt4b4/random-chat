@@ -13,7 +13,7 @@ const Home = ({ socket }) => {
   };
   return (
     // create a start chatting button in the center of the screen that will take the user to the chat page the user don't have to enter the username
-    <div className="flex justify-center items-center h-svh mx-auto">
+    <div className="flex justify-center items-center flex-grow mx-auto">
       <button
         onClick={handleSubmit}
         className="font-bold py-2 px-4 rounded bg-blue-500 hover:bg-blue-400"

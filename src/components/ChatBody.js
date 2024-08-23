@@ -7,6 +7,7 @@ import {
   Message,
   MessageInput,
   TypingIndicator,
+  MessageSeparator
 } from "@chatscope/chat-ui-kit-react";
 
 const ChatBody = ({ messages, setMessages, socket, partnerTypingStatus, setPartnerTypingStatus }) => {
@@ -44,6 +45,7 @@ const ChatBody = ({ messages, setMessages, socket, partnerTypingStatus, setPartn
       <MainContainer>
         <ChatContainer>
           <MessageList typingIndicator={partnerTypingStatus && <TypingIndicator content="Stranger is typing" />}>
+          <MessageSeparator content="You are now talking with stranger!" />
           {messages.map((message) =>
               message.name === localStorage.getItem("userName") ? (
                 <Message
@@ -52,6 +54,7 @@ const ChatBody = ({ messages, setMessages, socket, partnerTypingStatus, setPartn
                     message: message.text,
                     sentTime: "just now",
                     sender: message.name,
+                    position: "single"
                   }}
                 />
               ) : (
@@ -62,6 +65,7 @@ const ChatBody = ({ messages, setMessages, socket, partnerTypingStatus, setPartn
                     message: message.text,
                     sentTime: "just now",
                     sender: message.name,
+                    position: "single"
                   }}
                 />
               )
